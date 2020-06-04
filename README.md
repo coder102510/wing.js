@@ -32,19 +32,31 @@ To work with both wing.js and blade.js, we have provided an example:
 ```html
 <!doctype html>
 <html>
+  <head>
+    <link rel="stylesheet" href="wing.css" />
+  </head>
   <body>
     <div id="app" data-blade-app>
       <form onsubmit="wing()">
-        <label for="text">Example Page Input Text:</label>
-        <input id="#text" type="text" blade-model="text" />
+        <label for="email">Email:</label>
+        <input id="#email" type="email" blade-model="email" />
       </form>
-      {{text}}
+      {{email}}
+    </div>
+    <div class="tooltip" style="display:none;">
+      <div class="tooltip-text"><input blade-model="name" type="text" />
+        <br />
+        {{name}}
+      </div>
     </div>
     <script src="wing.js"></script>
     <script src="blade.js"></script>
     <script>
       var app = new blade.app(function() {
-        wing.hide("div")
+        if (isDefined(wing.findElements("form[onsubmit='wing()']"))) {
+          wing.hide("#app"); 
+          function wing() { wing.CSS.applyStyle("[data-blade-app]", "opacity", Math.random()) }
+        }
       }, "app");
     </script>
   </body>
