@@ -30,6 +30,10 @@ button.onclick = function() {
 # blade.js JS Framework
 # Intro to blade
 blade.js is a modern JS framework.
+The RawGit is:
+```html
+<script src="https://raw.githubusercontent.com/coder102510/wing.js/master/blade.js"></script>
+```
 Here is a basic example:
 ```html
 <!doctype html>
@@ -147,4 +151,4 @@ It is reccomended to work with both wing.js and blade.js, so we have provided an
   </body>
 </html>
 ```
-# There you have it! A short intro to wing.js!
+# There you have it! A short intro to wing.js and blade.js!
