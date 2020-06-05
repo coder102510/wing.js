@@ -9,22 +9,22 @@ This is the minified version.
 Basic code is: 
 ```javascript
 function hide() {
-  wing.hide("p");
+  wing.DOM.hide("p");
 }
 function show() {
-  wing.show("p")
+  wing.DOM.show("p")
 }
-var button = wing.findElements("button");
+var button = wing.DOM.findElements("button");
 button.onclick = function() {
-  if (wing.findElements("p").style.display === "none") { show() }
-  else if (wing.findElements("p").style.display === "block") { hide() }
+  if (wing.DOM.findElements("p").style.display === "none") { show() }
+  else if (wing.DOM.findElements("p").style.display === "block") { hide() }
 }
 ```
 Explanation: Get all "p" elements and toggle between hide or show on the click of a button. To do that same thing, do this instead:
 ```javascript
 var button = wing.findElements("button");
 button.onclick = function() {
-  wing.toggleShow("p")
+  wing.DOM.toggleShow("p")
 }
 ```
 # blade.js JS Framework
@@ -132,7 +132,7 @@ It is reccomended to work with both wing.js and blade.js, so we have provided an
     <script>
       //define an app
       var app = new blade.app(/* define a controller function */ function() {
-        if (isDefined(wing.findElements("form[onsubmit='wing()']"))) {
+        if (isDefined(wing.DOM.findElements("form[onsubmit='wing()']"))) {
           wing.hide("#app");
           var 
           //create function "wing()"
