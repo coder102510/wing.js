@@ -1,0 +1,291 @@
+/* wing.css CSS framework for better looking and responsive webpages | Created by Eshanth B.G. */
+
+/* Note: You will almost never use the -white classes*/
+
+/* Set default for all HTML tags */
+* {
+    padding-top:5px;
+    padding-bottom:16px;
+    padding-left:16px;
+    padding-right:16px;
+}
+/* Create container classes */
+.wing-container {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:16px;
+    padding-right:16px;
+}
+.wing-container-fluid {
+    text-align:justify;
+    text-justify:inter-word;
+    width:100%;
+}
+
+/* Jumbotron classes */
+.wing-jumbotron {
+    top:0;
+    padding-top:30px;
+    padding-bottom:30px;
+    padding-left:16px;
+    padding-right:16px;
+    background-color:grey;
+}
+
+.wing-jumbotron-fluid {width:100%}
+
+/* Size classes */
+
+.sm-width {width:9.5%}
+
+.sm-height {height:9.5%}
+
+.med-width {width:13%}
+
+.med-height {height:13%}
+
+.l-width {width:18%}
+
+.l-height {height:18%}
+
+.xl-width {width:21%}
+
+.xl-height {height:21%}
+
+/* Create bg-color classes */
+
+.bg-red {background-color:red}
+
+.bg-green {background-color:lightgreen}
+
+.bg-blue {background-color:blue}
+
+.bg-yellow {background-color:yellow}
+
+.bg-purple {background-color:purple}
+
+.bg-pink {background-color:pink}
+
+.bg-black {background-color:black}
+
+.bg-grey {background-color:grey}
+
+.bg-white {background-color:white}
+
+/* Create text-color classes */
+
+.txt-red {color:red}
+
+.txt-blue {color:blue}
+
+.txt-green {color:green}
+
+.txt-yellow {color:yellow}
+
+.txt-purple {color:purple}
+
+.txt-pink {color:pink}
+
+.txt-black {color:black}
+
+.txt-grey {color:grey}
+
+.txt-white {color:white}
+
+/* Link class */
+
+.link {
+    color:black;
+    font-size:5px;
+    font-family:'Lato', sans-serif;
+}
+
+.link:hover {color:blue}
+
+/* Alert, card, button, badges, flex, and nav classes */
+
+.alert {
+    padding-top:16px;
+    padding-bottom:16px;
+    padding-left:16px;
+    padding-right:16px;
+    border-radius:7.5px;
+    font-size:15px;
+}
+
+.button {
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.button-rounded {border-radius:5px}
+
+.button-pill {border-radius:10px}
+
+.card {
+    padding-top:7.5px;
+    padding-bottom:7.5px;
+    padding-right:5px;
+    padding-left:5px;
+    border-radius:7.5px;
+}
+
+.card-header {
+    text-align:center;
+    font-size:20px;
+}
+
+.card-body {
+    text-align:justify;
+    text-justify:inter-word;
+    font-size:12.5px;
+}
+
+.card-footer {
+    text-align:left;
+    font-size:7.5px;
+}
+
+.flexbox {
+    display:flex;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 10px;
+}
+
+.flexbox-full {width:100%}
+
+.flexbox-row-normal {
+    float:left;
+    clear:both;
+}
+
+.flexbox-row-reverse {
+    float:right;
+    clear:both;
+}
+
+.navbar {
+    margin:0px;
+    padding:0px;
+    font-size:5px;
+    font-family:'Lato', sans-serif;
+}
+
+.vnav {
+    display:block;
+    width:60px;
+}
+
+.hnav {
+    display:inline;
+    width:100%;
+}
+
+.badge {border-radius:5px}
+
+/* Tooltip classes */
+
+.tooltip {
+    position:relative;
+    display:inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility:hidden;
+    width:100px;
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px 0;
+    border-radius:6px;
+    
+    /* Position the tooltip */
+    
+    position:absolute;
+    z-index:1;
+}
+
+.tooltip:hover .tooltip-text {visibility:visible}
+
+/* Positioning classes */
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {left:0}
+
+.right {right:0}
+
+.top {top:0}
+
+.bottom {bottom:0}
+
+.ltcorner {
+    left: 0;
+    top:0;
+    background-color: #111;
+    width:300px;
+    height:300px;
+}
+
+.rtcorner {
+    right: 0;
+    top:0;
+    background-color: red;
+    width:300px;
+    height:300px;
+}
+.lbcorner {
+    left: 0;
+    bottom:0;
+    background-color: #111;
+    width:300px;
+    height:300px;
+}
+.rbcorner {
+    right: 0;
+    bottom:0;
+    background-color: #111;
+    width:300px;
+    height:300px;
+}
+            
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Responsive @media rule */
+
+@media only screen and (max-width: 600) {
+    .sm-width {width:5.5%}
+    
+    .sm-height {height:5.5%}
+    
+    .med-width {width:9%}
+    
+    .med-height {height:9%}
+    
+    .l-width {width:14%}
+    
+    .l-height {height:14%}
+    
+    .xl-width {width:17%}
+    
+    .xl-height {height:17%;}
+}
