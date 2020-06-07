@@ -52,16 +52,18 @@ Here is a basic example:
       </div>
     </div>
     <script>
-      //define a app
-      var app = new blade.app(/* define a controller */ function() {
-        $scopeData = {
-          "fname":"Jack",
-          "lname":"Stone",
-          "fullname": function() {
-            return this.fname + " " + this.lname;
+      $(
+        //define a app
+        var app = new blade.app(/* define a controller */ function() {
+          $scopeData = {
+            "fname":"Jack",
+            "lname":"Stone",
+            "fullname": function() {
+              return this.fname + " " + this.lname;
+            }
           }
-        }
-      }, /* define the id where data from $scopeData, blade-model, and blade-init can go */ "bladeApp");
+        }, /* define the id where data from $scopeData, blade-model, and blade-init can go */ "bladeApp");
+      )
     </script>
   </body>
 </html>
@@ -96,7 +98,17 @@ var app = new blade.app(function() {
   }
 }, "bladeApp");
 ```
-The $scopeData object inside the controller function works like the Angular JS $scope object. The second parameter("bladeApp") is the id where data can be displayed.
+The $scopeData object inside the controller function works like the Angular JS $scope object. The second parameter("bladeApp") is the id where data can be displayed. Before the app we execute the $ function. It works like a ready function. If the type of the parameter in the $ function is a function, it gets evaluated. It get evaluated even if you don't wrap the code in a function!
+```javascript
+//ready with parameter as nameless function
+$(function() {
+  console.log("ready function")
+});
+//or 
+$(
+  console.log("ready function2")
+);
+```
 # wing.js with blade.js
 It is reccomended to work with both wing.js and blade.js, so we have provided an example:
 ```html
@@ -137,7 +149,7 @@ It is reccomended to work with both wing.js and blade.js, so we have provided an
           var 
           //create function "wing()"
           //define function wing()
-          function wing() {
+          wing = function() {
             var sdata = JSON.parse($scopeData);
             wing.CSS.applyStyle("[data-blade-app]", "opacity", sdata.random) 
           }
