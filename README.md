@@ -9,22 +9,36 @@ This is the minified version.
 Basic code is: 
 ```javascript
 function hide() {
+  //make p elements invisible
   wing.DOM.hide("p");
 }
 function show() {
+  //make p elements visible
   wing.DOM.show("p")
 }
-var button = wing.DOM.findElements("button");
+//search for a button in the dom
+var button = Wing("button")[0];
+//onclick event
 button.onclick = function() {
-  if (wing.DOM.findElements("p").style.display === "none") { show() }
-  else if (wing.DOM.findElements("p").style.display === "block") { hide() }
+  //conditions: if invisible show if visible hide
+  if (Wing("p")[0].style.display === "none") { 
+    show();
+    button.html("Hide all p elements");
+  }
+  else if (Wing("p")[0].style.display === "block") { 
+    hide();
+    button.html("Show all p elements")
+  }
 }
+//if Wing function's first parameter starts with an "" or a ".", it returns a HTMLCollection object
+//if Wing function's first parameter starts with an "#", it returns a HTMLElement object
+//if no conditions match it returns a NodeList object
 ```
 Explanation: Get all "p" elements and toggle between hide or show on the click of a button. To do that same thing, do this instead:
 ```javascript
-var button = wing.findElements("button");
+var button = Wing("button");
 button.onclick = function() {
-  wing.DOM.toggleShow("p")
+  wing.DOM.toggleShow(Wing("p")[0]);
 }
 ```
 # blade.js JS Framework
@@ -144,14 +158,14 @@ It is reccomended to work with both wing.js and blade.js, so we have provided an
     <script>
       //define an app
       var app = new blade.app(/* define a controller function */ function() {
-        if (isDefined(wing.DOM.findElements("form[onsubmit='wing()']"))) {
-          wing.hide("#app");
+        if (/* Check if element exists */ isDefined(Wing("form[onsubmit='wing()']"))) {
+          wing.hide(Wing("#app"));
           var 
           //create function "wing()"
           //define function wing()
           wing = function() {
             var sdata = JSON.parse($scopeData);
-            wing.CSS.applyStyle("[data-blade-app]", "opacity", sdata.random) 
+            wing.CSS.applyStyle(Wing("[data-blade-app]"), "opacity", sdata.random) 
           }
         }
         //create data to put in application with global object "$scopeData"
