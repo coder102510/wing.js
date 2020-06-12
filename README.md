@@ -61,7 +61,7 @@ Here is a basic example:
       <div class="card-body bg-blue tooltip">
         Hover to see my full name!
         <div class="tooltip-text">
-          <p>{{fullname}}</p>
+          <p>${fullname}</p>
         </div>
       </div>
     </div>
@@ -97,8 +97,8 @@ Then, we make a div element with the attribute blade-app.
 ```
 Inside, we make a wing.css tooltip with the content from the Blade JS $scopeData object.
 ```html
-<!-- {{ }} are placeholders for blade.js data! -->
-<p>{{fullname}}</p>
+<!-- ${ } are placeholders for blade.js data! -->
+<p>${fullname}</p>
 ```
 And inside the script tag, we define an app.
 ```javascript
@@ -140,18 +140,18 @@ It is reccomended to work with both wing.js and blade.js, so we have provided an
         <input id="#email" type="email" blade-model="email" />
         <input type="image" src="submit.jpg" alt="submit" width="128px" height="128px" />
       </form>
-      <!--{{data goes here}} are blade.js placeholders for data  -->
-      {{email}}
+      <!--${data goes here} are blade.js placeholders for data  -->
+      ${email}
       <!-- wing.css tooltip -->
       <div class="tooltip" style="display:none;">
         <div class="tooltip-text"><input blade-model="name" type="text" />
           <br />
-          {{name}}
+          ${name}
         </div>
       </div>
     </div>
     <!-- $scopeData object random example -->
-    <p>Status: {{random}}</p>
+    <p>Status: ${random}</p>
     <!-- get wing.js and blade.js libraries -->
     <script src="wing.js"></script>
     <script src="blade.js"></script>
