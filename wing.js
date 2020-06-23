@@ -1,14 +1,8 @@
-export var wing = {};
+var wing = {};
 wing.dom = {};
 wing.xhr = {};
 wing.ui = {};
 wing.css = {};
-export {
-    wing.dom as dom,
-    wing.xhr as xhr,
-    wing.ui as ui,
-    wing.css as css
-}
 wing.dom.createDom = (element, css, innerhtml) => {
     wing.dom.createDomElements(element, css, innerhtml);
 }
@@ -39,5 +33,30 @@ wing.css.setStyle = function(element, cssobj) {
         for (i in cssobj) {
             elm.style[i.toString()] = cssobj[i];
         }
+    }
+}
+let xhr;
+wing.xhr.XHR = (url) => {
+    let xmlhttp = await new Promise((resolve, reject) => {
+        resolve(function() {
+           xhr = new XMLHttpRequest();
+           xhr.open("get", url, true);
+           xhr.send()
+        });
+        reject(new Error("XHR failure."))
+    }).then((value) => { 
+        value()
+    }, (error) => { 
+        throw error;
+    })
+    return xmlhttp;
+}
+wing.ui.container = (element) => {
+    var elm = wing.dom.getDom(element), cont = /container/i;
+    if (elm.className.match(cont)) {
+        elm.style.paddingTop = "10px";
+        elm.style.paddingBottom = "10px";
+        elm.style.paddingLeft = "16px";
+        elm.style.paddingLeft = "16px";
     }
 }
