@@ -20,7 +20,7 @@ for (var i = 0; i < l; i++) {
                     throw "The BladeJS controller needs to be defined.";
                 }
                 var i = 0, l = application.childNodes.length;
-                for (; i < l; i++) {
+                for (var i = 0; i < l; i++) {
                     if (application.childNodes[i].hasAttributes("blade-init")) {
                         let data = application.childNodes[i].getAttribute("blade-init");
                         if (data.match(keypattern)) {
