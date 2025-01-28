@@ -2,7 +2,7 @@ var elems = document.getElementsByTagName("*"),
     application = undefined, 
     i = 0, 
     l = elems.length;
-for (; i < l; i++) {
+for (var i = 0; i < l; i++) {
     application = elems[i];
     if (application.hasAttributes("blade-app") || application.hasAttributes("data-blade-app")) {
         const nl = document.querySelectorAll("[data-blade-app]") || document.querySelectorAll("[blade-app]"), l = nl.length;
